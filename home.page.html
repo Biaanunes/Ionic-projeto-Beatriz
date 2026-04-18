@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Taxi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-alert
+trigger="ver-linguagem"
+header=" O valor do motorita e do APP foram respectivamente" {{vMotorista}} {{vAplicativo}}
+[message]="linguagemEscolhida"
+[buttons]="alertButtons"
+></ion-alert>
+
+  <ion-radio-group value="aplicativo" [(ngModel)]="aplicativo">
+  <ion-radio value="normal">Normal </ion-radio><br />
+  <ion-radio value="superior">Superior</ion-radio><br />
+  <ion-radio value="vip">VIP</ion-radio><br />
+</ion-radio-group>
+
+<ion-input label="km rodados" labelPlacement="floating"
+    placeholder="Digite a quantidade de quilometros rodados" type="number"
+  [(ngModel)]="km"></ion-input>
+
+<ion-button expand="block" id="ver-linguagem"
+(click)="verificar()">Verificar</ion-button>
+
+<ion-label>Valor da corrida: R${{resultado}} </ion-label>
+
+</ion-content>
